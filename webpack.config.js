@@ -16,7 +16,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
-        }
+        } , include: path.resolve(__dirname, './assets/script'),
       },
       {
         test: /\.html$/,
