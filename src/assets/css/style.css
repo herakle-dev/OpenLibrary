@@ -1,0 +1,200 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+ background-color:#c6bca9;
+ color: #000000;
+}
+.cerca {
+  margin-top: 20px;
+}
+select {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+ 
+  border: none;
+  background-color: #f2f2f2;
+  appearance: none;
+}
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #719ECE;
+}
+select option:first-child {
+  color: #888;
+}
+select option {
+  color: #000000;
+  background-color: #f2f2f2;
+}
+label {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+ input[type="text"] {
+  background-color: #f2f2f2;
+  padding: 10px; 
+   border:  none
+}
+.bi-search {
+  padding: 10px;
+  font-size: 16px;
+  
+}
+.lista {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.listElement {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px grey;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.listElement:hover {
+  box-shadow: 0 0 25px #ccc;
+}
+.bookTitle {
+  text-align: center;
+  font-size: 1.4em;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+}
+.bookTitle:hover{
+  color: rgb(60, 59, 59);
+}
+.authorsPara {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+ width: 100%;
+ color: black;
+}
+.authorsPara:hover{
+  color: rgb(60, 59, 59);
+}
+.descriptionPara:hover {
+  box-shadow: 0 0 15px #a8a7a7;
+}
+.authorsPara {
+  font-style: italic;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.btn {
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-info:hover {
+  background-color: #138496;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.authorsPara {
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
+}
+.bookCover {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 372.5px;
+  width: 249.5px;
+
+}
+.bookCover:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.descriptionButton {
+ margin-top: 10px;
+}
+.descriptionPara {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  bottom: 5%;
+  transform: translate(-50%, -50%);
+  background-color:#d8cdb8;
+  border: 1px solid #282828;
+  color: black;
+  font-weight: 600;
+  padding: 10px;
+  z-index: 999;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.logo a{
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  background-image: linear-gradient(to right, #2301ff, #ff5100);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+a:link{
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+}
+
+.toast{
+  margin-top: 10%;
+  background-color: red;
+  color: white;
+ white-space:nowrap;
+ width: auto;
+}
+.progress {
+  height: 20px;
+  margin: 20px 0;
+  padding: 0;
+  background-color:#c6bca9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 2.5s ease-in-out;
+}
