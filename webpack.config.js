@@ -1,10 +1,10 @@
-
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/assets/script/script.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -16,7 +16,8 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
-        } , include: path.resolve(__dirname, './assets/script'),
+        } , 
+        
       },
       {
         test: /\.html$/,
@@ -39,7 +40,9 @@ module.exports = {
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
+        
       filename:  'style.css'
-    })
+    }),
+    new WebpackManifestPlugin(),
   ]
 };
