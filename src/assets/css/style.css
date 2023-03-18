@@ -39,6 +39,7 @@ label {
   padding: 10px; 
    border:  none
 }
+
 .bi-search {
   padding: 10px;
   font-size: 16px;
@@ -116,7 +117,6 @@ label {
 form {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
 .authorsPara {
@@ -196,4 +196,11 @@ a:link{
 .progress-bar {
   height: 100%;
   transition: width 2.5s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px)  {
+  form{
+    flex-direction: column;
+  }
 }
