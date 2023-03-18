@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 module.exports = {
-  entry: './src/assets/script/script.js',
+  entry: './src/assets/js/script.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -16,7 +16,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
-        } , 
+        } 
         
       },
       {
