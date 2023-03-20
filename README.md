@@ -9,7 +9,7 @@ This project is a JavaScript - based web application that allows users to search
 
 Getting Started
 
-To run this project locally, clone this repository to your local machine and write npm i in console to install all the libraries then, npm run build to build the app with webpack, and you can simply start the app by writing npm run start to start it in you local machine or you can simply visit the link up there, where the project is hosted in netlify
+To run this project locally, clone this repository to your local machine and write npm i in console to install all the libraries then, npm run build to build the app with webpack, and you can simply start the app by writing npm run start to start it in you local machine or you can simply visit the link up there, where the project is hosted on netlify
 
 
   Usage
