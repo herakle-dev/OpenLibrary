@@ -1,6 +1,6 @@
 # javaScriptAdvancedProject
 Project: OpenLibraryApi
-hosted on : https://books4free.netlify.app/
+hosted on : https://open-library-api-project.netlify.app/
 
 
 Readme
