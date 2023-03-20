@@ -20,6 +20,8 @@ You can see the description given by Api clicking on the button to show or hide 
 
 Built With
 Open Library API
+Bootstrap
+Lodash
 Axios
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
