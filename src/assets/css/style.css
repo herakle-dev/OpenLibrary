@@ -199,7 +199,7 @@ a:link{
 }
 
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 991px)  {
   form{
     flex-direction: column;
   }

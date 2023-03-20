@@ -5,10 +5,12 @@ const lista = document.getElementById('lista');
 let counter = 0;
 const progressBar = document.querySelector('.progress-bar');
 const welcome=  document.getElementById('welcome');
+//Loading bar start 0%
 progressBar.style.width = '0%';
 const url = `https://openlibrary.org`;
 //This function is used to simplify the creation of the element
 function createElement(tag, className, id) {
+  //the counter is used to make unique id
   counter++;
   const element = document.createElement(tag);
   element.className = className;
@@ -26,15 +28,17 @@ function getBookTitle(book, listElement) {
 }
 //This function is used to retrive the book's cover from a link found on openlibrary.org + the book cover id based on the search parameter
 function getBookCover(book, listElement, searchParameter) {
+  //because the api to retrive the cover id is different based on the search parameter we have a simple ternary operator
   let cover = `https://covers.openlibrary.org/b/id/${searchParameter === "subject" ? book.cover_id : book.cover_i}.jpg`;
   const imgCover = createElement('img', `bookCover img col-lg-8`, `bookCover`)
   imgCover.setAttribute("src", cover);
-  imgCover.setAttribute("alt", "testo alternativo");
+  imgCover.setAttribute("alt", "img not found");
   listElement.appendChild(imgCover);
 }
 //This function is used to retrive the book's author from the response.data.works made by the main api call, it makes a control by searchParameter and retrive the right link
 function getAuthorName(book, listElement) {
   let printAuthorsName = createElement('a', 'authorsPara col-lg-12', 'authors');
+  // the api keys used to retrive the author name is different because inside book we can find authors.name or author_name so we have an if statement
   if (_.get(book, 'authors[0].name')) {
     authorsArray = book.authors[0].name;
     authorKey = book.authors[0].key;
@@ -56,6 +60,7 @@ function getAuthorName(book, listElement) {
 function createToast(message) {
   let toastDiv = createElement('div', 'toast error show', 'toast');
   let toastMessage = createElement('h2', 'headError', 'error');
+  //We pass message as parameter that can contain a string and we can reuse this easly by simply call the function and then write the message we want to show
   toastMessage.innerHTML = message
   toastDiv.appendChild(toastMessage);
   lista.appendChild(toastDiv);
@@ -65,12 +70,14 @@ function createToast(message) {
 //This function is the core of the script because take the searchValue and the searchParameter and make an api call to openlibrary.org
 function getBooks(searchValue, searchParameter) {
   let apiUrl;
+  //Simple check if the parameter is subject, we go lowercase and allow only 1 word search
   if (searchParameter === "subject") {
     searchValue = searchValue.trim().toLowerCase();
     if (searchValue.indexOf(' ') !== -1 ) {
       createToast('La ricerca per categoria accetta una sola parola');
       return;
-    } 
+    }
+     // different url based on search parameter and we set limito to 50 results 
     apiUrl = `${url}/subjects/${searchValue}.json?limit=50`;
   } else if (searchParameter === "name") {
     apiUrl = `${url}/search.json?title=${searchValue}&limit=50`;
@@ -78,7 +85,7 @@ function getBooks(searchValue, searchParameter) {
     apiUrl = `${url}/search.json?author=${searchValue}&limit=50`;
   }
   axios.get(apiUrl, {
-    onDownloadProgress: progressEvent => {
+    onDownloadProgress: progressEvent => {//loading bar based on api call request progression
       const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
       progressBar.style.width = `${percentCompleted}%`;
     }
@@ -176,6 +183,7 @@ buttonSearch.addEventListener('click', (e) => {
   lista.innerHTML = '';
   progressBar.style.width = '0%'
  welcome.remove();
+ // form field control : user must fill correctly the field or will have an error shown
   if (searchParameter.value.length > 0 && searchValue.value.length > 0) {
   getBooks(searchValue.value, searchParameter.value)
   }
